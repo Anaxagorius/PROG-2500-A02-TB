@@ -45,6 +45,8 @@
             Save = new Button();
             tableLayoutPanel2 = new TableLayoutPanel();
             btnAdd = new Button();
+            btnUpdate = new Button();
+            btnDelete = new Button();
             tableLayoutPanel1.SuspendLayout();
             groupBox1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -79,6 +81,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(465, 330);
             listBox1.TabIndex = 0;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // Load
             // 
@@ -207,6 +210,8 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.Controls.Add(btnAdd, 0, 0);
+            tableLayoutPanel2.Controls.Add(btnUpdate, 1, 0);
+            tableLayoutPanel2.Controls.Add(btnDelete, 0, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(473, 339);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -226,6 +231,30 @@
             btnAdd.Text = "Add New Student";
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.Dock = DockStyle.Fill;
+            btnUpdate.Location = new Point(235, 3);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(227, 75);
+            btnUpdate.TabIndex = 1;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Visible = false;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Dock = DockStyle.Fill;
+            btnDelete.Location = new Point(3, 84);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(226, 75);
+            btnDelete.TabIndex = 2;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Visible = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // Form1
             // 
@@ -261,5 +290,7 @@
         private Button Save;
         private TableLayoutPanel tableLayoutPanel2;
         private Button btnAdd;
+        private Button btnUpdate;
+        private Button btnDelete;
     }
 }
